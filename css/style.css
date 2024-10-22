@@ -65,8 +65,6 @@ header {
   display: none;
 }
 .residence {
-  width: 100%;
-  height: auto;
   background-color: black;
   background-position: center;
   background-size: cover;
