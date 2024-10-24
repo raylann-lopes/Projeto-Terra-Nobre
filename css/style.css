@@ -309,6 +309,7 @@ form .text-bottom {
 /*structure*/
 
 .structure {
+  min-height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
@@ -366,7 +367,7 @@ form .text-bottom {
 /*Plants*/
 
 .plants {
-  min-height: 100vh;
+  min-height: 198vh;
   overflow: hidden;
 }
 .plants-box {
