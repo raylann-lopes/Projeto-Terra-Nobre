@@ -383,13 +383,9 @@ form .text-bottom {
   height: 100%;
   overflow: hidden;
   padding: 1px;
+  border-radius: 8px;
 }
 .plants-box img:hover {
   transform: scale(1.1);
   transition: 0.3s all ease-in-out;
-}
-.img{
-  margin: 0;
-  gap: 0;
-  padding: 0;
 }
