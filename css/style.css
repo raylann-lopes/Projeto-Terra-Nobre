@@ -46,7 +46,7 @@ header {
   padding: 33px 9%;
   z-index: 1000;
 }
- .image {
+.image {
   position: fixed;
   top: 15%;
   left: 14%;
@@ -70,8 +70,8 @@ header {
   background-size: cover;
   backdrop-filter: blur(100px);
 }
-body .contact{
-    margin-top: 0;
+body .contact {
+  margin-top: 0;
 }
 body .residence {
   height: 100%;
@@ -84,10 +84,12 @@ body .residence {
   align-items: center;
   gap: 2rem;
 }
-section {
+.residence,
+.structure,
+.cards {
   padding: 0 15%;
 }
-.residence-text{
+.residence-text {
   padding-top: 200px;
 }
 .residence-text h1 {
@@ -187,7 +189,8 @@ section {
     ellipse,
     rgba(252, 255, 104, 0.781) 0%,
     rgba(255, 217, 0, 0.637)
-  );  border-radius: 50px;
+  );
+  border-radius: 50px;
   transition: all 0.5s ease;
 }
 .scroll-down i:hover {
@@ -224,7 +227,6 @@ section {
   display: flex;
   flex-direction: column;
   width: 100%;
-  border-radius: 10px;
 }
 form label {
   color: #000000;
@@ -302,4 +304,91 @@ form .text-bottom {
 }
 .btn:hover {
   border-radius: 16px;
+}
+
+/*structure*/
+
+.structure {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 0 15%;
+}
+
+/*Cards*/
+.cards {
+  background-color: #000;
+  height: 100vh;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 150px;
+}
+.container .box {
+  height: 200px;
+  width: 400px;
+  border-radius: 10px;
+  background: #fff;
+  margin-left: 0;
+  margin: 20px;
+  position: relative;
+  box-shadow: 0px 0px 5px white;
+  transition: 0.3s all ease-in-out;
+  background-color: transparent;
+}
+.container .box .box-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+  text-align: center;
+}
+.container .box .box-content i {
+  display: flex;
+  color: var(--secondary-color);
+  font-size: 50px;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.container .box .box-content .desc {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: 100;
+  padding-top: 10px;
+  font-size: 18px;
+}
+
+/*Plants*/
+
+.plants {
+  min-height: 100vh;
+  overflow: hidden;
+}
+.plants-box {
+  display: grid;
+  margin: 0;
+}
+.template-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.plants-box img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 1px;
+}
+.plants-box img:hover {
+  transform: scale(1.1);
+  transition: 0.3s all ease-in-out;
+}
+.img{
+  margin: 0;
+  gap: 0;
+  padding: 0;
 }
