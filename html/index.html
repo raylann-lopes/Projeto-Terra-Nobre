@@ -113,17 +113,6 @@
             Prometemos não utilizar suas informações de contato para enviar
             qualquer tipo de SPAM.
           </p>
-
-          <input
-            type="hidden"
-            name="accessKey"
-            value="042be0d3-84fa-4ae8-aaed-2434cda72cac"
-          />
-          <input
-            type="hidden"
-            name="redirectTo"
-            value="http://127.0.0.1:5501/obrigado.html"
-          />
         </form>
       </div>
     </section>
@@ -170,9 +159,7 @@
             Aproveite essa oportunidade de investimento e adquira já o seu lote
             no Residencial Nova Serrana!
           </p>
-        </div>
-        <div>
-          <button class="button"><a>Saiba Mais</a></button>
+
         </div>
       </div>
       <div class="structure-video">
@@ -187,6 +174,12 @@
           loop
           class="video-lot"
         ></video>
+        <a
+        target="_blank"
+        href="https://api.whatsapp.com/send?phone=553397096552&text=Ol%C3%A1%2C%20gostaria%20de%20adquirir%20o%20meu%20lote!"
+        class="ctaa"
+        ><i class="fa-solid fa-comment"></i>  Saiba Mais</a
+      >
       </div>
     </section>
 
@@ -331,13 +324,20 @@
       <div class="video-reels-content">
         <div class="video-reels-box">
           <div class="video-reels-text">
-            <p>
-              Assista aos vídeos e conheça mais sobre o Residencial Nova
-              Serrana, o loteamento aberto com os melhores preços da região!
-            </p>
-          </div>
           <div class="video-reels-video">
-            <video
+            <div>
+              <video class="video"
+              src="/src/3D Oficial Nova Serrana.mp4"
+              controlslist
+              autoplay
+              loop
+              muted
+              nocontrols
+              onfocus="true"
+            ></video>
+            <!--
+            <div>
+              <video
               src="/src/Bônus 1 - Vertical .mp4"
               controlslist
               autoplay
@@ -346,7 +346,8 @@
               nocontrols
               onfocus="true"
             ></video>
-
+            </div>
+            <div>
             <video
               src="/src/Bônus 2 - Vertical .mp4"
               controlslist
@@ -356,7 +357,8 @@
               nocontrols
               onfocus="true"
             ></video>
-
+            </div>
+            <div>
             <video
               src="/src/Bônus 3 - Vertical .mp4"
               controlslist
@@ -366,6 +368,8 @@
               nocontrols
               onfocus="true"
             ></video>
+            </div>
+          -->
           </div>
         </div>
       </div>
@@ -425,8 +429,8 @@
         </div>
       </div>
       </footer>
-      <p class="copy">
-        Copryright &copy; 2024 by &lt;North Produções&gt;. All Rights Reserved
-      </p>
+        <p class="copy">
+          Copryright &copy; 2024 by &lt;North Produções&gt;. All Rights Reserved
+        </p>
     </body>
 </html>

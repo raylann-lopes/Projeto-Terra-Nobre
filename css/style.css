@@ -8,6 +8,7 @@
   text-decoration: none;
   list-style: none;
   scroll-behavior: smooth;
+  gap: 0;
 }
 
 :root {
@@ -335,11 +336,13 @@ form .text-bottom {
   padding-top: 20px;
 }
 .structure-video .video-lot {
-  width: 100%;
+  margin-top: 10%;
+  width: 101%;
   height: auto;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 8px;
   margin-left: 50px;
+  border: 1px solid var(--secondary-color);
 }
 .button {
   margin-top: 20px;
@@ -354,6 +357,38 @@ form .text-bottom {
   font-size: 15px;
   font-weight: 600;
 }
+.structure-video a {
+  margin-left: 48%;
+  margin-top: 20px;
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 500;
+  background-image: var(--button-color);
+  color: #000000;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.55s ease;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+.structure-video a:hover {
+  border: 1px solid var(--secondary-color);
+  color: black;
+  transform: translateY(-8px);
+}
+.structure-video a .ctaa {
+  background: transparent;
+  border: 1px solid rgb(196, 196, 29);
+  margin-left: 20px;
+}
+.structure-video a .ctaa i {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
 
 /*Cards*/
 .cards {
@@ -387,7 +422,7 @@ form .text-bottom {
 }
 .container .box .box-content i {
   display: flex;
-  color: var(--secondary-color);
+  color: rgba(255, 217, 0);
   font-size: 50px;
   padding-top: 40px;
   padding-bottom: 10px;
@@ -396,7 +431,7 @@ form .text-bottom {
 .container .box .box-content .desc {
   font-size: 24px;
   color: #ffffff;
-  font-weight: 100;
+  font-weight: 200;
   padding-top: 10px;
   font-size: 18px;
 }
@@ -404,8 +439,8 @@ form .text-bottom {
 /*Plants*/
 
 .plants {
-  background-color: rgb(255, 255, 255);
-  min-height: 94vh;
+  background-color: #F4F4F4;
+  min-height: 100vh;
   overflow: hidden;
 }
 .plants-box {
@@ -428,7 +463,30 @@ form .text-bottom {
   transition: 0.3s all ease-in-out;
 }
 
+
+
 /*video-reels*/
+
+.video-reels {
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #F4F4F4;
+  padding-top: 5%;
+}
+.video-reels-video .video{
+  display:block;
+  align-content: center;
+  width: 90%;
+  height: 90%;
+  border-radius: 15px;
+  margin-right: 0;
+  margin-left: 5%;
+  border: 1px solid var(--secondary-color);
+}
+
+/*video-reels
+
+
 
 .video-reels {
   min-height: 100vh;
@@ -443,19 +501,25 @@ form .text-bottom {
   color: rgb(255, 255, 255);
   align-content: center;
 }
-.video-reels-box video {
-  border-radius: 10px;
-}
+
 .video-reels .video-reels-video {
   width: 100%;
-  height: 100%;
+  height: 99%;
   overflow: hidden;
-  padding: 1px;
-  border-radius: 8px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 0fr);
   overflow: hidden;
+  gap: 0;
+  border-radius: 10px;
 }
+
+.video-reels-video div{
+  width: fit-content;
+  height: 99%;
+  border-top: 0;
+  border-bottom: 0;
+}
+*/
 
 /*footer*/
 .footer {
