@@ -14,8 +14,9 @@
   --main-color: #fcdb58;
   --secondary-color: #ff6c00;
   --text-color: #000;
-  --bg-color-01: #;
-  --bg-color-02: #;
+  --text-color2: #ffffff;
+  --bg-color-01: #000;
+  --bg-color-02: #ffffff;
   --border-color: #;
   --button-color: radial-gradient(
     ellipse,
@@ -273,10 +274,6 @@ form button {
   margin-bottom: 20px;
   border-radius: 5px;
 }
-/*form button:hover {
-  background: #f5f5f5;
-  color: #101026;
-}*/
 form .text-bottom {
   font-size: 12px;
 }
@@ -486,6 +483,9 @@ form .text-bottom {
   width: 100px;
   margin-bottom: 25px;
 }
+#company {
+  text-align: justify;
+}
 .col-footer {
   min-width: 250px;
   color: #f2f2f2f2;
@@ -517,7 +517,7 @@ form .text-bottom {
   margin-right: 5px;
   transition: 0.3s ease;
 }
-.col-footer .social a i:hover {
+.col-footer .social a i:hov{
   transform: scale(1.5);
   filter: grayscale(25);
   
