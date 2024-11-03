@@ -6,9 +6,13 @@
     <title>Residencial Nova Serrana</title>
 
     <!--CSS-->
+    <link rel="stylesheet" href="/css/jquery.hislide.min.css">
     <link rel="stylesheet" href="/css/style.css" />
+    
 
     <!--JQuery plugin-->
+    <script src="/JS/jquery.hislide.js"></script>
+    <script src="/JS/jquery.hislide.min.js"></script>
     <script src="/JS/UI JS/jquery-ui.min.js"></script>
     <script src="/JS/UI JS/jquery.min.js"></script>
     <script src="/JS/UI JS/tabs.js"></script>
@@ -70,28 +74,19 @@
           </div>
 
           <div class="input-box">
+            <p><label for="">CPF*</label></p>
+            <input type="text" placeholder="" />
+          </div>
+
+
+          <div class="input-box">
             <p><label for="">Email*</label></p>
-            <input type="email" placeholder="" required />
+            <input type="number" placeholder="" required />
           </div>
 
           <div class="input-box">
             <p><label for="">Telefone / Whatsapp*</label></p>
             <input type="tel" placeholder="" required />
-          </div>
-
-          <div class="input-box">
-            <p><label for="">Horario para Contato</label></p>
-            <select>
-              <option value="">
-                <p>Selecione</p>
-              </option>
-
-              <option value="Manhã">Manhã</option>
-
-              <option value="Tarde">Tarde</option>
-
-              <option value="Noite">Noite</option>
-            </select>
           </div>
 
           <div class="input-box">
@@ -175,8 +170,7 @@
           class="video-lot"
         ></video>
         <a
-        target="_blank"
-        href="https://api.whatsapp.com/send?phone=553397096552&text=Ol%C3%A1%2C%20gostaria%20de%20adquirir%20o%20meu%20lote!"
+        href="#residence"
         class="ctaa"
         ><i class="fa-solid fa-comment"></i>  Saiba Mais</a
       >
@@ -326,17 +320,6 @@
           <div class="video-reels-text">
           <div class="video-reels-video">
             <div>
-              <video class="video"
-              src="/src/3D Oficial Nova Serrana.mp4"
-              controlslist
-              autoplay
-              loop
-              muted
-              nocontrols
-              onfocus="true"
-            ></video>
-            <!--
-            <div>
               <video
               src="/src/Bônus 1 - Vertical .mp4"
               controlslist
@@ -369,14 +352,24 @@
               onfocus="true"
             ></video>
             </div>
-          -->
           </div>
         </div>
       </div>
     </section>
 
-    <!--Footer Section-->
+    <!--Map-->
     <hr color="#ff6c00">
+
+    <section class="map-content">
+      <div class="map-box">
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3782.6965875100136!2d-42.749005786345656!3d-18.542608349766986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDMyJzMzLjciUyA0MsKwNDQnNTAuNiJX!5e0!3m2!1spt-BR!2sbr!4v1730425281286!5m2!1spt-BR!2sbr" width="2000" height="500" style="border:0;" allowfullscreen="" overflow="hidden" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+        </div>
+      </div>
+    </section>
+
+      <!--Footer Section-->
+   <section class="footer-section">
     <footer class="footer">
       <div class="container-footer">
         <div class="row-footer">
@@ -423,14 +416,18 @@
             </div>
           </div>
         </div>
-
-        <div class="row-footer">
-          <div class="form"></div>
-        </div>
       </div>
-      </footer>
-        <p class="copy">
-          Copryright &copy; 2024 by &lt;North Produções&gt;. All Rights Reserved
-        </p>
+      </div>
+    </footer>
+  </section>
+    
+    <!--Copy Right-->
+
+    <hr color="#fff">
+    <div>
+      <p class="copy">
+        Copryright &copy; 2024 by &lt;North Produções&gt;. All Rights Reserved
+      </p>
+    </div>
     </body>
 </html>
