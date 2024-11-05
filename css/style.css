@@ -53,11 +53,11 @@ header {
   padding: 33px 9%;
   z-index: 1000;
 }
-.image {
-  position: fixed;
+.residence .image {
+  position: absolute;
   top: 15%;
   left: 14%;
-  width: 300px;
+  width: 100%;
 }
 .text {
   font-size: 20px;
@@ -84,7 +84,6 @@ body .residence {
   height: 100%;
   width: 100%;
   min-height: 100vh;
-  max-height: 100vh;
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -342,7 +341,6 @@ form .text-bottom {
   height: auto;
   overflow: hidden;
   border-radius: 8px;
-  margin-left: 50px;
   border: 1px solid var(--secondary-color);
 }
 .button {
@@ -359,7 +357,8 @@ form .text-bottom {
   font-weight: 600;
 }
 .structure-video a {
-  margin-left: 48%;
+  align-items: center;
+  margin-left: 42%;
   margin-top: 20px;
   display: inline-block;
   padding: 12px 30px;
@@ -392,7 +391,7 @@ form .text-bottom {
 /*Cards*/
 .cards {
   background-color: #000;
-  height: 100vh;
+  min-height: 100vh;
   z-index: 1005;
 }
 .container {
@@ -467,61 +466,60 @@ form .text-bottom {
 
 /*TEste*/
 
-.collection{
-    height: 80vh;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.collection {
+  height: 60vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.collection .content{
-    height: 28rem;
-    width: 25rem;
-    background-color: white;
-    border: .2rem solid rgba(0, 0, 0, 0.1);
-    border-radius: .7rem;
-    border-bottom: .4rem solid var(--main-color);
-    border-top: .4rem solid var(--main-color);
-    overflow: hidden;
-    padding: .2rem;
+.collection .content {
+  height: 28rem;
+  width: 25rem;
+  background-color: white;
+  border: 0.2rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.7rem;
+  border-bottom: 0.4rem solid var(--main-color);
+  border-top: 0.4rem solid var(--main-color);
+  overflow: hidden;
+  padding: 0.2rem;
 }
 
-.content img{
-    width: 100%;
-    border-bottom-left-radius: .6rem;
-    border-bottom-right-radius: .6rem;
+.content img {
+  width: 100%;
+  border-bottom-left-radius: 0.6rem;
+  border-bottom-right-radius: 0.6rem;
 }
-.text-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
+.text-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.text-content h3{
-    font-size: 1.7rem;
-    font-weight: 600;
+.text-content h3 {
+  font-size: 1.7rem;
+  font-weight: 600;
 }
-.text-content p{
-    max-width: 22rem;
-    font-size: .8rem;
-    font-weight: 300;
-    text-align: center;
+.text-content p {
+  max-width: 22rem;
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-align: center;
 }
-.btn{
-    background-color: var(--main-color);
-    padding: .3rem;
-    border: 2px solid var(--main-color);
-    outline: none;
-    font-size: .9rem;
-    border-radius: .5rem;
-    margin: 1rem 0;
-    cursor: pointer;
+.btn {
+  background-color: var(--main-color);
+  padding: 0.3rem;
+  border: 2px solid var(--main-color);
+  outline: none;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  cursor: pointer;
 }
-.btn:hover{
-    background-color: var(--secondary-color);
-    color: black;
-    border-radius: .5rem;
+.btn:hover {
+  background-color: var(--secondary-color);
+  color: black;
+  border-radius: 0.5rem;
 }
 
 /*video-reels*/
@@ -558,13 +556,11 @@ form .text-bottom {
   border-top: 0;
   border-bottom: 0;
 }
-.video-reels video{
+.video-reels video {
   border-radius: 10px;
 }
 
-
 /*map*/
-
 
 .map-content {
   min-height: 50vh;
@@ -688,4 +684,66 @@ form .text-bottom {
   font-size: 12px;
   text-align: center;
   font-weight: 100;
+}
+
+@media (max-width: 768px) {
+  body .residence {
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 10%;
+  }
+  .residence-text {
+    padding-top: 0;
+  }
+  .residence a {
+    display: none;
+  }
+  .residence-text {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  .residence .image {
+    padding-top: 20%;
+    position: static;
+    left: 0;
+    padding-left: 4%;
+  }
+  .contact {
+    left: 0;
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .contact h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+  .contact .text-bottom {
+    font-size: 10px;
+    text-align: center;
+  }
+  .icons {
+    display: none;
+  }
+  .structure {
+    display: grid;
+    width: 100%;
+    padding-top: 10%;
+  }
+  .structure .structure-text {
+    text-align: center;
+  }
+  .structure .structure-video {
+    margin-left: 5%;
+  }
+  .structure .structure-video a {
+    margin-left: 28%;
+    font-size: 12px;
+    margin-bottom: 10%;
+    align-items: center;
+  }
+  .footer-section {
+    overflow: hidden;
+    max-width: 100vw;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
