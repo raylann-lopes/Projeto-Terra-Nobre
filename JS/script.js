@@ -49,3 +49,37 @@ sr.reveal(".icon-9", { delay: 50, origin: "left" });
 sr.reveal(".video-1", { delay: 300, origin: "right" });
 sr.reveal(".video-2", { delay: 1000, origin: "right" });
 sr.reveal(".video-3", { delay: 1700, origin: "right" });
+
+/*Script Cards*/
+
+var swiper = new Swiper(".slide-content", {
+  slidesPerView: 3,
+  spaceBetween: 25,
+  loop: true,
+  centerslides: "true",
+  fade: "true",
+  grabCursor: "true",
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: "true",
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  breakPoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+});
+
+sr.reveal(".swiper-slide", { delay: 200, origin: "top" });
