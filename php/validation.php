@@ -1,55 +1,30 @@
 <?php
-function validarNome($nome)
-{
-    if (empty($nome) || strlen($nome) < 3) {
-        return "O nome deve ter pelo menos 3 caracteres.";
+include_once("conn.php");
+$table = "cadastro";
+$chaves  = '';
+$valores = '';
+$chv_val = '';
+$email = $_POST['email'];
+$telefone = $_POST['telefone'];
+
+//Verifica se tem um email para pesquisa
+
+$stmt = $conn->prepare("SELECT * FROM $table WHERE email = '" . $email . "' OR telefone = '" . $telefone . "'");
+$stmt->execute();
+$row = $stmt->fetch(PDO::FETCH_NUM);
+// $row[2];
+
+if ($row[2] == $email) {
+    echo 1;
+} else if ($row[3] == $telefone) {
+    echo 2;
+} else {
+    foreach ($_POST as $key => $value) {
+        $chaves .= $key . ",";
+        $valores .= "'$value'" . ",";
     }
-    return true;
+    $key_ins = substr($chaves, 4, -1);
+    $val_ins = substr($valores, 6, -1);
+    $stmt = $conn->prepare("INSERT INTO $table ($key_ins) VALUES ($val_ins)");
+    $stmt->execute();
 }
-
-function validarCPF($cpf)
-{
-    // Remove caracteres não numéricos
-    $cpf = preg_replace('/[^0-9]/', '', $cpf);
-
-    // Verifica se o CPF possui 11 dígitos
-    if (strlen($cpf) != 11) {
-        return false;
-    }
-
-    // Verifica se todos os dígitos são iguais
-    if (preg_match('/(\d)\1{10}/', $cpf)) {
-        return false;
-    }
-
-    // Calcula os dígitos verificadores
-    for ($t = 9; $t < 11; $t++) {
-        for ($d = 0, $i = 0; $i < $t; $i++) {
-            $d += $cpf[$i] * (($t + 1) - $i);
-        }
-        $d = ((10 * $d) % 11) % 10;
-        if ($cpf[$t] != $d) {
-            return false;
-        }
-    }
-
-    return true;
-}
-
-function validarEmail($email)
-{
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        return "O email informado é inválido.";
-    }
-
-    function validarTelefone($telefone)
-    {
-        // Validação básica de número de telefone (ajuste o padrão conforme necessário)
-        if (!preg_match('/^\(\d{2}\)\s9\d{4}-\d{4}$/', $telefone)) {
-            return "O número de telefone está em formato inválido. Exemplo: (11) 91234-5678";
-        }
-        return true;
-    }
-}
-
-// ... outras funções de validação para os demais campos

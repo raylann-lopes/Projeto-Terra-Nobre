@@ -1,20 +1,10 @@
 <?php
+/*
+$servidor	= "localhost";
+$usuario	= "root";
+$senha		= "usbw";
+$dbname		= "nserrana";
 
-$nome = addslashes($_POST['nome']);
-$cpf = addslashes($_POST['cpf']);
-$email = addslashes($_POST['email']);
-$telefone = addslashes($_POST['telefone']);
-$finalidade = addslashes($_POST['finalidade']);
-
-$para = "raylannlopes@gmail.com";
-$assunto = "Contato pelo Site";
-
-$corpo = "Nome: " . $nome . "\n" . "CPF: " . $cpf . "\n" . "Email: " . $email . "\n" . "Telefone: " . $telefone . "\n" . "Finalidade: " . $finalidade;
-
-$cabeca = "From: raylannlopes@gmail.com" . "\n" . "Reply-To: " . $email . "\n" . "X=Mailer: PHP/" . phpversion();
-
-if (mail($para, $assunto, $corpo, $cabeca)) {
-    echo "Email enviado com sucesso!";
-} else {
-    echo "O Email não pode ser enviado!";
-}
+/$conn = new PDO($servidor, $usuario, $senha, $dbname,array(PDO::ATTR_PERSISTENT => true)) or die("Connection Off: " . $conn->connect_error);
+*/
+$conn = pg_connect("host=localhost port=5432 dbname=nova-serrana user=postgres password=2204");
