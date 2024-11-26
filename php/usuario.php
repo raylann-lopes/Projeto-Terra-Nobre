@@ -11,7 +11,7 @@ if (isset($_POST)) {
     $finalidade = $_POST['finalidade'];
 
 
-    $query = "INSERT INTO tblpessoa (nome, cpf, email, telefone, finalidade) VALUES ('$nome', '$sobrenome', '$email', '$telefone', '$finalidade')";
+    $query = "INSERT INTO cliente (nome, cpf, email, telefone, finalidade) VALUES ('$nome', '$sobrenome', '$email', '$telefone', '$finalidade')";
 
     $stmt = $pdo->prepare($query);
     $stmt->execute();
