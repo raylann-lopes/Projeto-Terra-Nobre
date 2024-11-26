@@ -32,7 +32,7 @@ $(document).ready(function () {
     if (cont == 0) {
       var email = $("#email");
       var telefone = $("#telefone");
-      var src = "actions.php";
+      var src = "validation.php";
       $.ajax({
         url: src,
         type: "POST",
