@@ -1,6 +1,9 @@
 <?php
+
+$conn = new PDO('mysql:host=186.195.143.1;port=3327;dbname=cadastro-nova-serrana', 'root', 'usbw');
+
 include_once("conn.php");
-$table = "cadastro";
+$table = "clientes";
 $chaves  = '';
 $valores = '';
 $chv_val = '';
