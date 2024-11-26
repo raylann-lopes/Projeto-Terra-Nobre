@@ -1,10 +1,20 @@
 <?php
-/*
-$servidor	= "localhost";
-$usuario	= "root";
-$senha		= "usbw";
-$dbname		= "nserrana";
 
-/$conn = new PDO($servidor, $usuario, $senha, $dbname,array(PDO::ATTR_PERSISTENT => true)) or die("Connection Off: " . $conn->connect_error);
-*/
-$conn = new PDO('mysql:host=186.195.143.1;port=3327;dbname=cadastro-nova-serrana', 'root', 'usbw', array(PDO::ATTR_PERSISTENT => true)) or die("Connection Off: " . $conn->connect_error);
+require("connection.php");
+
+if (isset($_POST)) {
+
+    $nome = $_POST['nome'];
+    $cpf = $_POST['cpf'];
+    $email = $_POST['email'];
+    $telefone = $_POST['telefone'];
+    $finalidade = $_POST['finalidade'];
+
+
+    $query = "INSERT INTO cliente (nome, cpf, email, telefone, finalidade) VALUES ('$nome', '$sobrenome', '$email', '$telefone', '$finalidade')";
+
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+
+    header("Location: index.html?criado=sucesso");
+}
