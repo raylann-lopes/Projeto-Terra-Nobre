@@ -2,7 +2,7 @@
 
 $conn = new PDO('mysql:host=186.195.143.1;port=3327;dbname=cadastro-nova-serrana', 'root', 'usbw');
 
-$table = "clientes";
+$table = "cliente";
 $chaves  = '';
 $valores = '';
 $chv_val = '';
