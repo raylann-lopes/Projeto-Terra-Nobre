@@ -5,14 +5,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Residencial Nova Serrana</title>
-
-  <script src="JS/jquery-ui.min.js"></script>
-  <script src="JS/jquery.min.js"></script>
-  <script src="JS/tabs.js"></script>
-  <script class="scrollreveal" src="JS/scrollreveal.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.alertable.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="js/jquery.easing.js"></script>
+  <script class="scrollreveal" src="js/scrollreveal.js"></script>
 
   <!--CSS-->
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/easing.css" />
+  <link rel="stylesheet" href="css/tabs.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/jquery.alertable.css">
   <link rel="stylesheet" href="css/swiper-bundle.min.css">
 
   <!--Box Icons-->
@@ -24,92 +30,88 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
 </head>
 
 <body>
   <section class="residence" id="residence">
-    <div class="image">
-      <img src="src/logo white.png" alt="" />
+    <div class="left">
+      <div class="image">
+        <img src="src/logo-white.png" class="image-white" alt="" />
+        <div>
+          <img src="src/tn-logo-branca.png" alt="" class="logo-tn1" />
+        </div>
+        <div class="residence-text">
+          <h6>Oportunidade de Investimento</h6>
+          <p class="title">
+            Loteamento com os melhores preços da região e com ótimas condições de
+            pagamento!
+          </p>[
+          ]
+          <p class="title2">
+            Conheça o Residencial Nova Serrana, nosso lançamento a apenas 500m do
+            centro da cidade, em São João Evangelista.
+          </p>
+          <a target="_blank" href="https://api.whatsapp.com/send?phone=553397096552&text=Ol%C3%A1%2C%20gostaria%20de%20adquirir%20o%20meu%20lote!" class="ctaa"><i class="ri-phone-fill"></i> Contato</a>
+        </div>
+      </div>
     </div>
-    <div class="residence-text">
-      <h6>Oportunidade de Investimento</h6>
-      <p class="title">
-        Loteamento com os melhores preços da região e com otimas condições de
-        pagamento!
-      </p>
-      <p class="title2">
-        Conheça o Residencial Nova Serrana, nosso lançamento a apenas 500m do
-        centro da cidade, em São João Evangelista.
-      </p>
-      <a target="_blank"
-        href="https://api.whatsapp.com/send?phone=553397096552&text=Ol%C3%A1%2C%20gostaria%20de%20adquirir%20o%20meu%20lote!"
-        class="ctaa"><i class="ri-phone-fill"></i> Contato</a>
-    </div>
+    <div class="right">
+      <h2>Entre em <span>Contato</span></h2>
+      <div class="contact">
+        <form id="actions">
+          <div class="input-box">
+            <input type="hidden" name="acc" id="acc" value="ins" />
+            <label for="">Nome Completo*</label>
+            <input type="text" id="nome" name="nome" placeholder="" class="required" required />
+          </div>
 
-    <div class="contact">
-      <h2>Entre em <span> Contato</span></h2>
+          <div class="input-box">
+            <label for="">CPF*</label>
+            <input type="text" id="cpf" name="cpf" maxlength="14" onkeyup="handleCpf(event)" placeholder="" />
+          </div>
 
-      <form action="php/validation.php" method="post" netlify>
-        <div class="input-box" id="nome">
-          <label for="">Nome Completo*</label>
-          <input type="text" input id="nome" name="nome" placeholder="" class="required" required  />
-        </div>
+          <div class="input-box">
+            <label for="">Email*</label>
+            <input id="email" name="email" type="email" placeholder="" class="required" required />
+          </div>
 
-        <div class="input-box" id="CPF">
-          <label for="">CPF*</label>
-          <input type="text" input id="cpf" name="cpf" placeholder="" />
-        </div>
+          <div class="input-box">
+            <label for="">Telefone / Whatsapp*</label>
+            <input type="tel" id="telefone" name="telefone" maxlength="14" onkeyup="handlePhone(event)" placeholder="" class="required" required />
+          </div>
 
+          <div class="input-box">
+            <label for="finalidade">Por que esta buscando este Imóvel?</label>
+            <select id="finalidade" name="finalidade" class="">
+              <option value="">
+                <p>Selecione</p>
+              </option>
+              <option value="Investimento">Investimento</option>
+              <option value="Moradia">Moradia</option>
+            </select>
+          </div>
 
-        <div class="input-box" id="email">
-          <label for="">Email*</label>
-          <input input id="email" name="email" type="email" placeholder="" class="required" required />
-        </div>
+          <input type="button" class="submit" value="Enviar Mensagem" id="gravar">
 
-        <div class="input-box">
-          <label for="">Telefone / Whatsapp*</label>
-          <input type="tel" input id="telefone" name="telefone" placeholder="" class="required" required />
-        </div>
-
-        <div class="input-box">
-          <label for="finalidade">Por que esta buscando este Imóvel?</label>
-          <select id="finalidade" name="finalidade" class="">
-            <option value="">
-              <p>Selecione</p>
-            </option>
-
-            <option value="Investimento">Investimento</option>
-
-            <option value="Moradia">Moradia</option>
-          </select>
-        </div>
-
-        <input type="submit" class="submit" value="Enviar Mensagem" id="gravar">  
-
-        <p class="text-bottom">
-          Prometemos não utilizar suas informações de contato para enviar
-          qualquer tipo de SPAM.
-        </p>
-      </form>
+          <p class="text-bottom">
+            Prometemos não utilizar suas informações de contato para enviar
+            qualquer tipo de SPAM.
+          </p>
+        </form>
+      </div>
     </div>
   </section>
+
   <div class="icons">
     <a target="_blank" href="https://www.instagram.com/residencialnovaserrana/"><i class="ri-instagram-fill"> </i></a>
-    <a target="_blank"
-      href="https://api.whatsapp.com/send?phone=553397096552&text=Ol%C3%A1%2C%20gostaria%20de%20adquirir%20o%20meu%20lote!"><i
-        class="ri-whatsapp-fill"></i></a>
+    <a target="_blank" href="https://api.whatsapp.com/send?phone=553397096552&text=Ol%C3%A1%2C%20gostaria%20de%20adquirir%20o%20meu%20lote!"><i class="ri-whatsapp-fill"></i></a>
   </div>
   <div class="scroll-down">
-    <a target="_blank"
-      href="https://api.whatsapp.com/send?phone=553397096552&text=Ol%C3%A1%2C%20gostaria%20de%20adquirir%20o%20meu%20lote!"><i
-        class="ri-whatsapp-fill"></i></a>
+    <a target="_blank" href="https://api.whatsapp.com/send?phone=553397096552&text=Ol%C3%A1%2C%20gostaria%20de%20adquirir%20o%20meu%20lote!"><i class="ri-whatsapp-fill"></i></a>
   </div>
 
   <!--Estrutura do Site-->
-
   <section class="structure" id="structure">
     <div class="structure-box">
       <div class="structure-text">
@@ -131,13 +133,11 @@
           Aproveite essa oportunidade de investimento e adquira já o seu lote
           no Residencial Nova Serrana!
         </p>
-
       </div>
     </div>
     <div class="structure-video">
       <div class="video" id="video" data-id="25G_oMvG6-4"></div>
-      <video src="src/3D Oficial Nova Serrana.mp4" controlslist] nocontrol width="100%" muted autoplay loop
-        class="video-lot"></video>
+      <video src="src/3D Oficial Nova Serrana.mp4" controlslist="nocontrol" width="100%" muted autoplay loop class="video-lot"></video>
       <a href="#residence" class="ctaa"><i class="fa-solid fa-comment"></i> Saiba Mais</a>
     </div>
   </section>
@@ -147,275 +147,98 @@
     <div class="container">
       <div class="box">
         <div class="box-content">
-          <i class="bx bxl-dribbble icon-1"></i>
+          <i><img src="src/svg/football.svg" width="50px" height="50px" alt="" class="icon-1"></i>
           <p class="desc">Quadra poliesportiva</p>
         </div>
         <a href="#"></a>
       </div>
 
       <div class="box">
-        <div class="box-content ">
-          <i class="fa-solid fa-faucet-drip icon-2"></i>
+        <div class="box-content">
+          <i><img src="src/svg/pluvial.svg" width="50px" height="50px" alt="" class="icon-2"></i>
           <p class="desc">Rede Pluvial</p>
         </div>
         <a href="#"></a>
       </div>
 
       <div class="box">
-        <div class="box-content ">
-          <i class="fa-solid fa-road icon-3"></i>
+        <div class="box-content">
+          <i><img src="src/svg/road.svg" width="50px" height="50px" alt="" class="icon-3"></i>
           <p class="desc">Pavimentação Asfaltica</p>
         </div>
         <a href="#"></a>
       </div>
 
       <div class="box">
-        <div class="box-content ">
-          <i class="ri-football-line icon-4"></i>
-          <p class="desc">Rede de Esgosto</p>
+        <div class="box-content">
+          <i><img src="src/svg/torneira.svg" width="50px" height="50px" alt="" class="icon-4"></i>
+          <p class="desc">Agua Encanada</p>
         </div>
         <a href="#"></a>
       </div>
 
       <div class="box">
-        <div class="box-content ">
-          <i class="fa-solid fa-tree icon-5"></i>
+        <div class="box-content">
+          <i><img src="src/svg/tree.svg" width="50px" height="50px" alt="" class="icon-5"></i>
           <p class="desc">Arborização</p>
         </div>
         <a href="#"></a>
       </div>
 
       <div class="box">
-        <div class="box-content ">
-          <i class="fa-solid fa-bolt icon-6"></i>
+        <div class="box-content">
+          <i><img src="src/svg/bolt.svg" width="50px" height="50px" alt="" class="icon-6"></i>
           <p class="desc">Eletricidade</p>
         </div>
         <a href="#"></a>
       </div>
 
       <div class="box">
-        <div class="box-content ">
-          <i class="fa-solid fa-tree-city icon-7"></i>
+        <div class="box-content">
+          <i><img src="src/svg/tree-city.svg" width="50px" height="50px" alt="" class="icon-7"></i>
           <p class="desc">Praça</p>
         </div>
         <a href="#"></a>
       </div>
 
       <div class="box">
-        <div class="box-content ">
-          <i class="bx bxs-landscape icon-8"></i>
+        <div class="box-content">
+          <i><img src="src/svg/mountain.svg" width="50px" height="50px" alt="" class="icon-8"></i>
           <p class="desc">Paisagismo completo</p>
         </div>
         <a href="#"></a>
       </div>
 
       <div class="box">
-        <div class="box-content ">
-          <i class="fa-solid fa-map-location-dot icon-9"></i>
+        <div class="box-content">
+          <i><img src="src/svg/location.svg" width="50px" height="50px" alt="" class="icon-9"></i>
           <p class="desc">Excelente localização</p>
         </div>
         <a href="#"></a>
       </div>
     </div>
-  </section>
-
-  <!--Gallery-->
-  <section class="collection" id="collection">
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="content swiper-slide">
-          <img src="/src/Imagem 2.jpg" alt="">
-          <div class="text-content">
-            <h3>Proximidade ao Centro</h3>
-            <p>Imagem aérea, destacando a localização privilegiada do loteamento, que oferece fácil acesso aos
-              principais pontos urbanos, combinando a tranquilidade de um ambiente planejado com a conveniência de estar
-              perto do centro da cidade.</p>
-            <a href="#"><button class="btn">Mais informações</button></a>
-          </div>
-        </div>
-        <div class="content swiper-slide">
-          <img src="/src/Imagem 3.jpg" alt="">
-          <div class="text-content">
-            <h3>Loteamento</h3>
-            <p>Vista aérea do loteamento Nova Serrana, mostrando a distribuição planejada dos lotes e a infraestrutura
-              moderna. Com ruas amplas e bem pavimentadas, áreas verdes e espaços de convivência, este loteamento é
-              perfeito para quem busca um investimento seguro e de qualidade</p>
-            <a href="#"><button class="btn">Mais informações</button></a>
-          </div>
-        </div>
-        <div class="content swiper-slide">
-          <img src="/src/Imagem 1.jpg" alt="">
-          <div class="text-content">
-            <h3>Imagem Aerea</h3>
-            <p> Imagem aérea do loteamento Nova Serrana, revelando uma ampla visão dos lotes disponíveis para venda. Os
-              lotes estão demarcados com linhas visíveis. A disposição dos lotes é planejada, com ruas largas e bem
-              definidas, proporcionando fácil acesso a todos... </p>
-            <a href="#"><button class="btn">Mais informações</button></a>
-
-          </div>
-        </div>
-        <div class="content swiper-slide">
-          <img src="/src/Imagem 4.jpg" alt="">
-          <div class="text-content">
-            <h3>Praça </h3>
-            <p>Praça central do loteamento Nova Serrana, um espaço verde ideal para lazer e convivência. O espaço
-              contará com area para relaxar, playground e paisagismo planejado, a praça oferece um ambiente agradável e
-              acolhedor para os futuros moradores."</p>
-            <a href="#"><button class="btn">Mais informações</button></a>
-          </div>
-        </div>
-        <div class="content swiper-slide">
-          <img src="/src/Imagem 5.jpg" alt="">
-          <div class="text-content">
-            <h3>Arborização</h3>
-            <p>Espaço arborizado do loteamento Nova Serrana, proporciona um ambiente natural e tranquilo. Com árvores
-              nativas e áreas verdes bem cuidadas, este espaço é ideal para caminhadas, piqueniques e momentos de
-              relaxamento, oferecendo qualidade de vida aos futuros moradores."</p>
-            <a href="#"><button class="btn">Mais informações</button></a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <section class="img-carrosel">
+      <swiper-container class="mySwiper" pagination="true" pagination-type="fraction">
+        <swiper-slide><img src="src/5.jpg" alt=""></swiper-slide>
+        <swiper-slide><img src="src/2.jpg" alt=""></swiper-slide>
+        <swiper-slide><img src="src/3.jpg" alt=""></swiper-slide>
+        <swiper-slide><img src="src/4.jpg" alt=""></swiper-slide>
+        <swiper-slide><img src="src/1.jpg" alt=""></swiper-slide>
+      </swiper-container>
+    </section>
   </section>
 
   <!--Video Reels-->
-
   <section class="video-reels" id="video-reels">
-    <div class="video-reels-content">
-      <div class="video-reels-box">
-        <div class="video-reels-text">
-          <div class="video-reels-video">
-            <div>
-              <video class="video-1" src="/src/Bônus 1 - Vertical .mp4" controlslist autoplay loop muted nocontrols
-                onfocus="true"></video>
-            </div>
-            <div>
-              <video class="video-2" src="/src/Bônus 2 - Vertical .mp4" controlslist loop autoplay muted nocontrols
-                onfocus="true"></video>
-            </div>
-            <div>
-              <video class="video-3" src="/src/Bônus 3 - Vertical .mp4" controlslist loop muted autoplay nocontrols
-                onfocus="true"></video>
-            </div>
-          </div>
-        </div>
-      </div>
+    <script src="js/swiper-element-bundle.min.js"></script>
   </section>
-
-    <!--Corretores-->
-
-    <section class="team">
-      <div class="slide-container swiper">
-        <div class="slide-content">
-          <div class="card-wrapper swiper-wrapper">
-            <div class="card swiper-slide">
-              <div class="image-content">
-                <span class="overlay"></span>
-  
-                <div class="card-image">
-                  <img src="/source/anapc.jpg" alt="" class="card-img" />
-                </div>
-              </div>
-  
-              <div class="card-content">
-                <h2 class="name">Ana Clara</h2>
-                <p class="description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Facere voluptates dolores dolor ut expedita. Enim alias
-                  assumenda, inventore sint explicabo eligendi officiis
-                  temporibus cupiditate ipsam. Dignissimos illo ad sapiente
-                  voluptatem!
-                </p>
-  
-                <button class="button">Ver Mais</button>
-              </div>
-            </div>
-            <!--Card 02-->
-            <div class="card swiper-slide">
-              <div class="image-content">
-                <span class="overlay"></span>
-  
-                <div class="card-image">
-                  <img src="/source/ana3.jpg" alt="" class="card-img" />
-                </div>
-              </div>
-  
-              <div class="card-content">
-                <h2 class="name">Rian Lopes</h2>
-                <p class="description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Facere voluptates dolores dolor ut expedita. Enim alias
-                  assumenda, inventore sint explicabo eligendi officiis
-                  temporibus cupiditate ipsam. Dignissimos illo ad sapiente
-                  voluptatem!
-                </p>
-  
-                <button class="button">Ver Mais</button>
-              </div>
-            </div>
-            <!--Card 03-->
-            <div class="card swiper-slide">
-              <div class="image-content">
-                <span class="overlay"></span>
-  
-                <div class="card-image">
-                  <img src="/src/TST/ana3.jpg" alt="" class="card-img" />
-                </div>
-              </div>
-  
-              <div class="card-content">
-                <h2 class="name">Ana Clara</h2>
-                <p class="description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Facere voluptates dolores dolor ut expedita. Enim alias
-                  assumenda, inventore sint explicabo eligendi officiis
-                  temporibus cupiditate ipsam. Dignissimos illo ad sapiente
-                  voluptatem!
-                </p>
-  
-                <button class="button">Ver Mais</button>
-              </div>
-            </div>
-            <!--Card 04-->
-            <div class="card swiper-slide">
-              <div class="image-content">
-                <span class="overlay"></span>
-  
-                <div class="card-image">
-                  <img src="/source/an2.jpg" alt="" class="card-img" />
-                </div>
-              </div>
-  
-              <div class="card-content">
-                <h2 class="name">Ana Clara</h2>
-                <p class="description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Facere voluptates dolores dolor ut expedita. Enim alias
-                  assumenda, inventore sint explicabo eligendi officiis
-                  temporibus cupiditate ipsam. Dignissimos illo ad sapiente
-                  voluptatem!
-                </p>
-  
-                <button class="button">Ver Mais</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-button-next swiper-navBtn"></div>
-        <div class="swiper-button-prev swiper-navBtn"></div>
-        <div class="swiper-pagination"></div>
-      </div>
-    </section>
 
   <!--Map-->
   <section class="map-content">
     <hr color="#ff6c00">
-    <div class="map-box">
+    <div class="map-box"></div>
       <div class="map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4654.498563959001!2d-42.74932692391904!3d-18.542286896602114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDMyJzMyLjMiUyA0MsKwNDQnNDguMyJX!5e1!3m2!1spt-BR!2sbr!4v1730739966870!5m2!1spt-BR!2sbr"
-          width="1920" height="600" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4654.498563959001!2d-42.74932692391904!3d-18.542286896602114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDMyJzMyLjMiUyA0MsKwNDQnNDguMyJX!5e1!3m2!1spt-BR!2sbr!4v1730739966870!5m2!1spt-BR!2sbr" width="1920" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
@@ -426,7 +249,7 @@
       <div class="container-footer">
         <div class="row-footer">
           <div class="col-footer" id="company">
-            <img src="/src/logo white.png" alt="" class="logo-footer" />
+            <img src="src/logo-white.png" alt="" class="logo-footer" />
             <p>
               Quer construir a casa dos seus sonhos? A escolha do lote é o
               primeiro e um dos mais importantes passos para garantir que tudo
@@ -447,8 +270,9 @@
               <a href="#">Rosilene Moreira
                 CRECI/MG Nº. 37969
               </a>
-              <a href="#">Corretor</a>
-              <a href="#">Corretor</a>
+              <a href="#">Thiago Pereira
+                CRECI/MG PJ Nº. 7327
+              </a>
             </div>
           </div>
           <div class="col-footer" id="userfull-links">
@@ -463,34 +287,30 @@
           <div class="col-footer" id="contact">
             <h3>Contato</h3>
             <div class="contact-details-footer">
-              <i class="fa fa-location"></i>
-              <p>Av. Milton Campos 3505, Sala 03<br />Guanhães - MG</p>
+              <i><img src="src/svg/location2.svg" alt=""></i>
+              <p> <a href="https://www.google.com.br/maps/place/Terra+Nobre+Imobili%C3%A1ria/@-18.7809619,-42.9412318,1067m/data=!3m2!1e3!4b1!4m6!3m5!1s0xafb57993224041:0xfca0189ef0d16532!8m2!3d-18.7809619!4d-42.9412318!16s%2Fg%2F11k9gv9lng?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoJLDEwMjExMjMzSAFQAw%3D%3D"> Av. Milton Campos 3505, Sala 03<br />Guanhães - MG</a></p>
             </div>
             <div class="contact-details-footer">
-              <i class="fa fa-phone"></i>
-              <p>+55 33 9979-0887</p>
+              <i><img src="src/svg/phone.svg" alt=""></i>
+              <p>+55 33 99979-0887</p>
             </div>
           </div>
         </div>
-      </div>
       </div>
     </footer>
   </section>
 
   <!--Copy Right-->
-
   <hr color="#fff">
   <div>
     <p class="copy">
-      Copryright &copy; 2024 by &lt;North Produções&gt;. All Rights Reserved
+      Copyright &copy; 2024 by &lt;North Produções&gt;. All Rights Reserved
     </p>
   </div>
 
   <!--JQuery plugin-->
-  <script src="/JS/swiper-bundle.min.js"></script>
-  <script src="/JS/script.js"></script>
-  <script src="/JS/jquery.hislide.js"></script>
-  <script src="/JS/jquery.hislide.min.js"></script>
-  <script src="https://kit.fontawesome.com/66e8fb32ce.js" crossorigin="anonymous"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
+
 </html>

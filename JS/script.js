@@ -27,10 +27,52 @@ const sr = ScrollReveal({
 });
 
 sr.reveal(".image, .residence-text, .icons", { delay: 100, origin: "top" });
-sr.reveal(".contact", { delay: 450, origin: "right" });
-sr.reveal(".structure-video", { delay: 150, origin: "right" });
+let vh = window.innerWidth;
+if (vh > 1024) {
+  sr.reveal(".contact", { delay: 450, origin: "right" });
+}
+let vh1 = window.innerWidth;
+if (vh1 > 1024) {
+  sr.reveal(".structure-video", { delay: 150, origin: "right" });
+}
 sr.reveal(".image1", { delay: 300, origin: "right" });
 sr.reveal(".scroll-down", { delay: 500, origin: "right" });
+
+if (vh > 1024) {
+  var htmlVideoPc1 =
+    '<swiper-container class="mySwiper" pagination="true" pagination-clickable="true" space-between="30" slides-per-view="3">' +
+    "<swiper-slide>" +
+    "<video  class='video' src='src/video1.mp4'controlslist muted controls onfocus='true'>" +
+    "</video>" +
+    "</swiper-slide>" +
+    "<swiper-slide>" +
+    "<video  class='video' src='src/video-alex.mp4' controlslist muted controls onfocus='true'>" +
+    "</video>" +
+    "</swiper-slide>" +
+    "<swiper-slide>" +
+    "<video  class='video' src='src/video3.mp4' controlslist muted controls onfocus='true'>" +
+    "</video>" +
+    "</swiper-slide>" +
+    "</swiper-container>";
+  $("#video-reels").html(htmlVideoPc1);
+} else if (vh < 900) {
+  var htmlVideoPc1 =
+    '<swiper-container class="mySwiper" pagination="true" pagination-clickable="true" space-between="30" slides-per-view="1">' +
+    "<swiper-slide>" +
+    "<video class='video' src='src/video-alex.mp4' controlslist controls muted onfocus='true'>" +
+    "</video>" +
+    "</swiper-slide>" +
+    "<swiper-slide>" +
+    "<video class='video' src='src/video2.mp4' controlslist controls muted onfocus='true'>" +
+    "</video>" +
+    "</swiper-slide>" +
+    "<swiper-slide>" +
+    "<video class='video' src='src/video3.mp4' controlslist controls muted onfocus='true'>" +
+    "</video>" +
+    "</swiper-slide>" +
+    "</swiper-container>";
+  $("#video-reels").html(htmlVideoPc1);
+}
 
 /*icones*/
 
@@ -43,12 +85,6 @@ sr.reveal(".icon-6", { delay: 50, origin: "top" });
 sr.reveal(".icon-7", { delay: 50, origin: "right" });
 sr.reveal(".icon-8", { delay: 50, origin: "bottom" });
 sr.reveal(".icon-9", { delay: 50, origin: "left" });
-
-/*Animação de reels*/
-
-sr.reveal(".video-1", { delay: 300, origin: "right" });
-sr.reveal(".video-2", { delay: 1000, origin: "right" });
-sr.reveal(".video-3", { delay: 1700, origin: "right" });
 
 /*Script Cards*/
 
@@ -70,7 +106,7 @@ var swiper = new Swiper(".slide-content", {
   },
 
   breakPoints: {
-    320: {
+    400: {
       slidesPerView: 1,
     },
     768: {
@@ -84,51 +120,46 @@ var swiper = new Swiper(".slide-content", {
 
 sr.reveal(".swiper-slide", { delay: 200, origin: "top" });
 
-/*Script DB*/
+/*script slider*/
 
-if ("WebSocket" in window) {
-  (function () {
-    function refreshCSS() {
-      var sheets = [].slice.call(document.getElementsByTagName("link"));
-      var head = document.getElementsByTagName("head")[0];
-      for (var i = 0; i < sheets.length; ++i) {
-        var elem = sheets[i];
-        var parent = elem.parentElement || head;
-        parent.removeChild(elem);
-        var rel = elem.rel;
-        if (
-          (elem.href && typeof rel != "string") ||
-          rel.length == 0 ||
-          rel.toLowerCase() == "stylesheet"
-        ) {
-          var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
-          elem.href =
-            url +
-            (url.indexOf("?") >= 0 ? "&" : "?") +
-            "_cacheOverride=" +
-            new Date().valueOf();
-        }
-        parent.appendChild(elem);
-      }
-    }
-    var protocol = window.location.protocol === "http:" ? "ws://" : "wss://";
-    var address =
-      protocol + window.location.host + window.location.pathname + "/ws";
-    var socket = new WebSocket(address);
-    socket.onmessage = function (msg) {
-      if (msg.data == "reload") window.location.reload();
-      else if (msg.data == "refreshcss") refreshCSS();
-    };
-    if (
-      sessionStorage &&
-      !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
-    ) {
-      console.log("Live reload enabled.");
-      sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
-    }
-  })();
-} else {
-  console.error(
-    "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
-  );
+let slider = document.querySelector(".slider .list");
+let items = document.querySelectorAll(".slider .list .item");
+let next = document.getElementById("next");
+let prev = document.getElementById("prev");
+let dots = document.querySelectorAll(".slider .dots li");
+
+let lengthItems = items.length - 1;
+let active = 0;
+next.onclick = function () {
+  active = active + 1 <= lengthItems ? active + 1 : 0;
+  reloadSlider();
+};
+prev.onclick = function () {
+  active = active - 1 >= 0 ? active - 1 : lengthItems;
+  reloadSlider();
+};
+let refreshInterval = setInterval(() => {
+  next.click();
+}, 3000);
+function reloadSlider() {
+  slider.style.left = -items[active].offsetLeft + "px";
+  //
+  let last_active_dot = document.querySelector(".slider .dots li.active");
+  last_active_dot.classList.remove("active");
+  dots[active].classList.add("active");
+
+  clearInterval(refreshInterval);
+  refreshInterval = setInterval(() => {
+    next.click();
+  }, 3000);
 }
+
+dots.forEach((li, key) => {
+  li.addEventListener("click", () => {
+    active = key;
+    reloadSlider();
+  });
+});
+window.onresize = function (event) {
+  reloadSlider();
+};

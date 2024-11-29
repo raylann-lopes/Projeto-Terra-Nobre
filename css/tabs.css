@@ -1,0 +1,48 @@
+:root{
+--tBh:670px;
+--ftm:12px;
+--lnh:30px;
+
+margin: 0;
+padding: 0;	
+background-color:#000000;
+}
+@media only screen and (max-width: 800px) {
+  :root {
+    --tBh: 90%;
+	--ftm:15px;
+	--lnh:60px;
+  }
+}
+
+#home{	background-color:#000000;}
+#servicos{	background-color:#333;}
+#portifolio{  background-color:#000000;}
+#produtos{	background-color:#333;}
+#contato{	background-color:#000000;}
+
+.tab-pane {
+	width:100%;
+	height:var(--tBh);
+	display:none;
+	border-top: none;
+}
+.tab-pane.active{
+  display:inherit;
+  
+}
+#myTab li{
+	display:inline-block;
+	min-width:120px;
+	height: var(--lnh);
+	line-height:var(--lnh);
+	text-align:center;
+	font-weight:bold;
+	font-size:var(--ftm);
+	cursor:pointer;
+}
+.credit{
+    font-size: var(--ftm);
+	color:#fff;
+	padding-top:5px;
+}

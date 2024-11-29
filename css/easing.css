@@ -1,0 +1,121 @@
+:root {
+  --main-color: #fcdb58;
+  --secondary-color: #ff6c00;
+  --text-color: #000;
+  --text-color2: #ffffff;
+  --bg-color-01: #000;
+  --bg-color-02: #ffffff;
+  --border-color: #;
+  --button-color: radial-gradient(
+    ellipse,
+    rgba(252, 255, 104, 0.781) 0%,
+    rgba(255, 217, 0, 0.637)
+  );
+
+  .rotator {
+    background-color: #222;
+    width: 700px;
+    height: 600px;
+    margin: 0px auto;
+    position: relative;
+    font-family: "Myriad Pro", Arial, Helvetica, sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    border: 3px solid #f0f0f0;
+    overflow: hidden;
+    -moz-box-shadow: 0px 0px 10px #fcdb58;
+    -webkit-box-shadow: 0px 0px 10px #fcdb58;
+    box-shadow: 0px 0px 10px #fcdb58;
+  }
+  img.bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  .rotator ul {
+    list-style: none;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    margin-top: 6px;
+    z-index: 999999;
+  }
+  .rotator ul li {
+    display: block;
+    float: left;
+    clear: both;
+    width: 260px;
+  }
+  .rotator ul li a {
+    width: 200px;
+    float: right;
+    clear: both;
+    padding-left: 10px;
+    text-decoration: none;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fcdb58;
+    margin: 3px -20px 1px 0px;
+    opacity: 0.7;
+    color: #f0f0f0;
+    font-size: 12px;
+    border: 2px solid #000;
+    border-right: none;
+    outline: none;
+    text-shadow: -1px 1px 1px #000;
+    -moz-border-radius: 10px 0px 0px 20px;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 20px;
+  }
+  .rotator ul li a:hover {
+    text-shadow: 0px 0px 2px #fff;
+  }
+  .rotator .heading {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 500px;
+  }
+  .rotator .heading h1 {
+    text-shadow: -1px 1px 1px #555;
+    font-weight: normal;
+    font-size: 46px;
+    padding: 20px;
+  }
+  .rotator .description {
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 20px;
+    background-color: #333;
+    opacity: 0.7;
+  }
+  .fg {
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    bottom: 0px;
+    background-color: #333;
+  }
+  .rotator .description p {
+    text-shadow: -1px 1px 1px #000;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 26px;
+  }
+  a.more {
+    color: orange;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+  a.more:hover {
+    color: #fff;
+  }
+}
